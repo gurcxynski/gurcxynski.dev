@@ -19,7 +19,7 @@ export default function Home( { allPostsData } : { allPostsData : {id : string, 
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+        <p>@gurcxynski</p>
         <p>
           (This is a sample website - you will be building a site like this in our Next.js tutorial.)
         </p>
