@@ -19,12 +19,23 @@ export default function Home( { allPostsData } : { allPostsData : {id : string, 
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       <section className={utilStyles.headingMd}>
         <p>@gurcxynski</p>
         <p>
           (This is a sample website - you will be building a site like this in our Next.js tutorial.)
         </p>
       </section>
+      
+      <section>
+        <h1 className={utilStyles.headingLg}> My projects </h1>
+        <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem}>
+             <Link href={`projects/tic-tac-toe`}> Tic Tac Toe </Link> 
+             </li>
+        </ul>
+      </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h1 className={utilStyles.headingLg}>Blog</h1>
         <ul className={utilStyles.list}>
@@ -39,6 +50,7 @@ export default function Home( { allPostsData } : { allPostsData : {id : string, 
           ))}
         </ul>
       </section>
+
     </Layout>
   )
 }
