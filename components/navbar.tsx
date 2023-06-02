@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-export default function HeadBar(){
+export default function Navbar(){
     return(
-        <header className={utilStyles.headbar}>
+        <header className={utilStyles.navbar}>
             <Link href="/" className={utilStyles.logo}>
               <Image
                 src="/images/gurcxynskidev-low-resolution-logo-white-on-transparent-background.png"
@@ -13,13 +13,14 @@ export default function HeadBar(){
               />
             </Link>
             <div className={utilStyles.pageTitle}> gurcxynski.dev </div>
-            <NavButton href={"/projects"}> PROJECTS </NavButton>
-            <NavButton href={"/cv"}> CV </NavButton>
+            <Navbutton href={"/projects"}> PROJECTS </Navbutton>
+            <Navbutton href={"/cv"}> CV </Navbutton>
+            <Navbutton href={"/posts/lorem-ipsum"}> LOREM IPSUM </Navbutton>
         </header>
     )
 }
 
-function NavButton({children, href} : {children : string, href : string}){
+function Navbutton({children, href} : {children : string, href : string}){
     return(
         <Link href={href} className={utilStyles.navButton}> <button className={utilStyles.button19}> {children} </button> </Link>
     )

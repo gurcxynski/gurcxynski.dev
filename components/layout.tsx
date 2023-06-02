@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
+import Navbar from './navbar'
 
 export const siteTitle = 'gurcxynski.dev'
 
@@ -16,6 +17,7 @@ export default function Layout({ children, home } : {children : React.ReactNode,
         
         <meta name="og:title" content={siteTitle} />
       </Head>
+      <Navbar />
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
