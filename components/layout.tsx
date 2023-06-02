@@ -9,7 +9,7 @@ export default function Layout({ children, home } : {children : React.ReactNode,
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/g.dev.icon.ico" />
         <meta name="og:title" content={siteTitle} />
         <Headbar />
       </Head>
