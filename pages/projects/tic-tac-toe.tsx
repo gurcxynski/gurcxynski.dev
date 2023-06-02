@@ -58,7 +58,6 @@ export default function TicTacToe(){
         </Layout>
     )
 
-
 }
 
 function Square({ index, callback } : { index : number, callback(index : number) : void}) {
