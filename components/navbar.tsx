@@ -15,9 +15,11 @@ export default function Navbar(){
               />
             </Link>
             <Link className={utilStyles.pageTitle} href={"/"}> gurcxynski.dev </Link>
+            <div className={utilStyles.buttons}>
+            <Navbutton href={"/posts/lorem-ipsum"}> LOREM </Navbutton>
             <Navbutton href={"/projects"}> PROJECTS </Navbutton>
-            <Navbutton href={"/cv"}> CV </Navbutton>
-            <Navbutton href={"/posts/lorem-ipsum"}> LOREM IPSUM </Navbutton>
+            <Navbutton href={"/cv"}> MY CV </Navbutton>
+            </div>
         </header>
     )
 }
