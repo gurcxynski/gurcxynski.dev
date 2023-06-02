@@ -18,39 +18,42 @@ export default function Home( { allPostsData } : { allPostsData : {id : string, 
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        
       </Head>
-
       <section className={utilStyles.headingMd}>
-        <p>@gurcxynski</p>
+        <Link href="https://github.com/gurcxynski">@gurcxynski</Link>
         <p>
-          (This is a sample website - you will be building a site like this in our Next.js tutorial.)
+          Tutaj super interesujacy opis mnie
         </p>
       </section>
       
       <section>
-        <h1 className={utilStyles.headingLg}> My projects </h1>
+        <h1 className={utilStyles.headingXl}> My projects </h1>
         <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
              <Link href={`projects/tic-tac-toe`}> Tic Tac Toe </Link> 
              </li>
         </ul>
       </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h1 className={utilStyles.headingLg}>Blog</h1>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`posts/${id}`}> {title} </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+      <section className={utilStyles.headingLg}>
+          <b>CV</b>
       </section>
-
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+<h1 className={utilStyles.headingLg}>Blog</h1>
+<ul className={utilStyles.list}>
+  {allPostsData.map(({ id, date, title }) => (
+    <li className={utilStyles.listItem} key={id}>
+      <Link href={`posts/${id}`}> {title} </Link>
+      <br />
+      <small className={utilStyles.lightText}>
+      <Date dateString={date} />
+      </small>
+    </li>
+  ))}
+</ul>
+</section>
     </Layout>
   )
 }
+/*
+*/
