@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+
 export default function Navbar(){
     return(
         <header className={utilStyles.navbar}>
@@ -10,9 +11,10 @@ export default function Navbar(){
                 height={100}
                 width={180}
                 alt="logo"
+                priority={true}
               />
             </Link>
-            <div className={utilStyles.pageTitle}> gurcxynski.dev </div>
+            <Link className={utilStyles.pageTitle} href={"/"}> gurcxynski.dev </Link>
             <Navbutton href={"/projects"}> PROJECTS </Navbutton>
             <Navbutton href={"/cv"}> CV </Navbutton>
             <Navbutton href={"/posts/lorem-ipsum"}> LOREM IPSUM </Navbutton>

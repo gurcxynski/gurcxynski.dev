@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
 import Navbar from './navbar'
+import Contact from './contact-me'
 
 export const siteTitle = 'gurcxynski.dev'
 
@@ -22,8 +23,10 @@ export default function Layout({ children, home } : {children : React.ReactNode,
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
+          
         </div>
       )}
+      <Contact />
     </div>
   )
 }

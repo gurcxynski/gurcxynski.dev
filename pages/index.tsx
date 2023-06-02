@@ -9,23 +9,12 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <Link href="https://github.com/gurcxynski">@gurcxynski</Link>
-        <p>
-          Tutaj super interesujacy opis mnie
-        </p>
-      </section>
-      <section>
-        <h1 className={utilStyles.headingXl}> My projects </h1>
-        <ul className={utilStyles.list}>
-          <li className={utilStyles.listItem}>
-             <Link href={`projects/tic-tac-toe`}> Tic Tac Toe </Link> 
-             </li>
-        </ul>
-      </section>
-      <section className={utilStyles.headingLg}>
-          <Link href="/cv">CV</Link>
-      </section>
+      <div className={utilStyles.headingMd}>
+        Tutaj super interesujacy opis mnie
+      </div>
+      <div className={utilStyles.headingMd}>
+        Tutaj super interesujacy opis projektow
+      </div>
     </Layout>
   )
 }

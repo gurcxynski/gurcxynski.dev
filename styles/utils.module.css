@@ -10,6 +10,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  backdrop-filter: blur(100px);
+  z-index: 10;
 }
 
 .logo {
@@ -34,7 +36,7 @@
   margin-right: 30px;
   text-align: center;
   width: 110px;
-  height: 80px;
+  height: 75px;
 }
 
 .button19:hover {
@@ -47,6 +49,9 @@
   font-size: 40px;
   margin: 15%;
   color: white;
+}
+.pageTitle:hover{
+  text-decoration: none;
 }
 
 
@@ -135,4 +140,13 @@
   border-radius: 3px;
   margin-top: 4%;
   margin-left: 15%
+}
+
+.socialmedialogo {
+  float:left;
+  margin-right: 1%;
+}
+
+.socialmedia {
+  text-align: justify;
 }
