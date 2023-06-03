@@ -1,41 +1,57 @@
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import { ReactNode } from 'react';
 import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    Button,
-    Image,
-    Box
-  } from '@chakra-ui/react'
-import {ChevronDownIcon} from '@chakra-ui/icons'
+  Box,
+  Flex,
+  HStack,
+  Link,
+  useColorMode,
+  useColorModeValue,
+  Image
+} from '@chakra-ui/react';
+import ColorModeToggle from './ColorModeToggle';
 
-export default function Navbar(){
-    return(
-        <div className={utilStyles.navbar}> 
-            <Link href="/">
-                <Box boxSize='200px'>
-                <Image src="/images/gurcxynskidev-low-resolution-logo-white-on-transparent-background.png" alt="logo" />
-                </Box>
-            </Link>
-            <Link className={utilStyles.pageTitle} href={"/"}> gurcxynski.dev </Link>
-            <MyMenu/>
-        </div>
-    )
-}
+const Links = ['Dashboard', 'Projects', 'Team'];
 
-function MyMenu(){
-    return(
-        <Menu>
-              <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
-                Pages
-              </MenuButton>
-              <MenuList>
-                <MenuItem><Link href={"/posts/lorem-ipsum"}> Lorem ipsum </Link></MenuItem>
-                <MenuItem><Link href={"/projects"}> My projects </Link></MenuItem>
-                <MenuItem><Link href={"/cv"}> CV </Link></MenuItem>
-              </MenuList>
-            </Menu>
-    )
+const NavLink = ({ target, children }: { target : string, children: ReactNode }) => (
+  <Link
+    px={2}
+    py={1}
+    rounded={'md'}
+    _hover={{
+      textDecoration: 'none',
+      bg: useColorModeValue('gray.200', 'gray.700'),
+    }}
+    href={`/${target}`}>
+    {children}
+  </Link>
+);
+
+export default function Navbar() {
+  const { colorMode } = useColorMode();
+  return (
+    <>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+          <HStack spacing={8} alignItems={'center'}>
+            <Box width='6vw'>
+              <Link href="/">
+              <Image src={`/images/gurcxynskidev-low-resolution-logo-${colorMode === 'light' ? 'black' : 'white'}-on-transparent-background.png`} alt="logo" />
+              </Link>
+            </Box>
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
+              {Links.map((link) => (
+                <NavLink key={link} target={link.toLowerCase()}>{link}</NavLink>
+              ))}
+            </HStack>
+          </HStack>
+          <Flex alignItems={'center'}>
+          <ColorModeToggle/>
+          </Flex>
+        </Flex>
+      </Box>
+    </>
+  );
 }
