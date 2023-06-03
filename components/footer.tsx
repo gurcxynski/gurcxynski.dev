@@ -52,9 +52,8 @@ import {
               <Link href={'https://gurcxynski.itch.io'}>Releases on <Text as='b'>itch.io</Text></Link>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Company</ListHeader>
+              <ListHeader>Me</ListHeader>
               <Link href={'/about-me'}>About Me</Link>
-              <Link href={'#'}>Contact Me</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Follow Me</ListHeader>

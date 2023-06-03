@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import ColorModeToggle from './ColorModeToggle';
 
-const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'CV'}, {text : 'About me'}, ] 
+const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'CV', link: "/cv"}, {text : 'About me'}, ] 
 
 const NavLink = ({ target, children }: { target? : string, children: ReactNode }) => (
   <Link
@@ -21,7 +21,7 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={`/${target ? target : children?.toString().toLowerCase().replace(" ", "-")}`}>
+    href={`${target ? target : "/" + children?.toString().toLowerCase().replace(" ", "-")}`}>
     {children}
   </Link>
 );
