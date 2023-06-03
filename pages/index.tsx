@@ -1,28 +1,33 @@
+import Layout from '@/components/layout'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import {Box, Image} from '@chakra-ui/react'
-import styles from '../components/layout.module.css';
-import { Button } from '@chakra-ui/react'
-
+import {Heading, Flex, Image, Spacer, Stack, Text} from '@chakra-ui/react'
 export default function Home() {
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>gurcxynski.dev</title>
+        <meta name="description" content="Website for personal projects showcase" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/g.dev.icon.ico" />
       </Head>
-      <header className={styles.header}>
-      <Box boxSize='sm'>
-        <Image borderRadius='full'
-        boxSize='200px'
-        src="/images/profile1.jpg"
-        alt="profile-picture"/>
-      </Box>
-      </header>
-      <div className={utilStyles.headingMd}>
-        Tutaj super interesujacy opis projektow
-      </div>
-      <Button colorScheme="darkgray"> PRESS ME </Button>
-    </Layout>
+      <main>
+        <Layout>
+          <Stack spacing={3}>
+            <Flex>
+              <Spacer/>
+              <Image borderRadius='full'
+                boxSize='200px'
+                src="/images/profile.jpg"
+                alt="profile-picture"/>
+              <Spacer/>
+            </Flex>
+            <Stack spacing={2}>
+              <Heading size='2xl'> Wojciech Górczyński </Heading>
+              <Text fontSize='sm'> @gurcxynski </Text>
+            </Stack>
+          </Stack>
+        </Layout>
+      </main>
+    </>
   )
 }
