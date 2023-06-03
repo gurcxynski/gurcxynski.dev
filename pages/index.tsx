@@ -1,7 +1,20 @@
 import Layout from '@/components/layout'
 import Head from 'next/head'
 import {Heading, Flex, Image, Spacer, Stack, Text} from '@chakra-ui/react'
-export default function Home() {
+import { PostData, getLipsum } from '@/lib/lipsum';
+import { GetStaticProps } from 'next';
+import Post from '@/components/post';
+
+export const getStaticProps: GetStaticProps = async () => {
+  const postData = await getLipsum();
+  return {
+    props: {
+      postData,
+    },
+  };
+}
+
+export default function Home({postData} : { postData : PostData }) {
   return (
     <>
       <Head>
@@ -25,6 +38,7 @@ export default function Home() {
               <Heading size='2xl'> Wojciech Górczyński </Heading>
               <Text fontSize='sm'> @gurcxynski </Text>
             </Stack>
+            <Post postData={postData}/>
           </Stack>
         </Layout>
       </main>
