@@ -10,9 +10,9 @@ import {
 } from '@chakra-ui/react';
 import ColorModeToggle from './ColorModeToggle';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'CV'}, {text : 'About me'}, ] 
 
-const NavLink = ({ target, children }: { target : string, children: ReactNode }) => (
+const NavLink = ({ target, children }: { target? : string, children: ReactNode }) => (
   <Link
     px={2}
     py={1}
@@ -21,7 +21,7 @@ const NavLink = ({ target, children }: { target : string, children: ReactNode })
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={`/${target}`}>
+    href={`/${target ? target : children?.toString().toLowerCase().replace(" ", "-")}`}>
     {children}
   </Link>
 );
@@ -42,8 +42,8 @@ export default function Navbar() {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link} target={link.toLowerCase()}>{link}</NavLink>
+              {Links.map(({text, link}) => (
+                <NavLink key={text} target={link}>{text}</NavLink>
               ))}
             </HStack>
           </HStack>
