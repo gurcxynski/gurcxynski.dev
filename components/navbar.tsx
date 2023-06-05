@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   Box,
   Flex,
@@ -6,14 +6,17 @@ import {
   Link,
   useColorMode,
   useColorModeValue,
-  Image
+  Image,
+  Heading,
+  Spacer,
 } from '@chakra-ui/react';
 import ColorModeToggle from './ColorModeToggle';
+import NextLink from 'next/link'
 
-const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'CV', link: "/cv"}, {text : 'About me'}, ] 
+const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'Releases'}, {text : 'About me'}, ] 
 
 const NavLink = ({ target, children }: { target? : string, children: ReactNode }) => (
-  <Link
+  <Link as={NextLink}
     px={2}
     py={1}
     rounded={'md'}
@@ -29,12 +32,11 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
 export default function Navbar() {
   const { colorMode } = useColorMode();
   return (
-    <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box width='6vw'>
-              <Link href="/">
+              <Link as={NextLink} href="/">
               <Image src={`/images/gurcxynskidev-low-resolution-logo-${colorMode === 'light' ? 'black' : 'white'}-on-transparent-background.png`} alt="logo" />
               </Link>
             </Box>
@@ -47,11 +49,9 @@ export default function Navbar() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+          <Heading size='lg'> gurcxynski.dev </Heading>
           <ColorModeToggle/>
-          </Flex>
         </Flex>
       </Box>
-    </>
   );
 }

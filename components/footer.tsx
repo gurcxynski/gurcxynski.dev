@@ -1,4 +1,4 @@
-import { PhoneIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link'
 import {
     Box,
     Container,
@@ -45,21 +45,21 @@ import {
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
             <Stack align={'flex-start'}>
               <ListHeader>My projects</ListHeader>
-              <Link href={'https://github.com/gurcxynski?tab=repositories'}><Text as='b'>Github</Text> repositories</Link>
+              <Link as={NextLink} href={'https://github.com/gurcxynski?tab=repositories'}><Text as='b'>Github</Text> repositories</Link>
               <Stack direction={'row'} align={'center'} spacing={2}>
-                <Link href={'https://www.fiverr.com/gurcxynski'}><Text as='b'>Fiverr</Text> page</Link>
+                <Link as={NextLink} href={'https://www.fiverr.com/gurcxynski'}><Text as='b'>Fiverr</Text> page</Link>
               </Stack>
-              <Link href={'https://gurcxynski.itch.io'}>Releases on <Text as='b'>itch.io</Text></Link>
+              <Link as={NextLink} href={'https://gurcxynski.itch.io'}>Releases on <Text as='b'>itch.io</Text></Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Me</ListHeader>
-              <Link href={'/about-me'}>About Me</Link>
+              <Link as={NextLink} href={'/about-me'}>About Me</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Follow Me</ListHeader>
-              <Link href={'https://www.facebook.com/gurcxynski/'}>Facebook</Link>
-              <Link href={'https://github.com/gurcxynski'}>Github</Link>
-              <Link href={'https://www.linkedin.com/in/wojciech-górczyński-979442232/'}>LinkedIn</Link>
+              <Link as={NextLink} href={'https://www.facebook.com/gurcxynski/'}>Facebook</Link>
+              <Link as={NextLink} href={'https://github.com/gurcxynski'}>Github</Link>
+              <Link as={NextLink} href={'https://www.linkedin.com/in/wojciech-górczyński-979442232/'}>LinkedIn</Link>
             </Stack>
           </SimpleGrid>
         </Container>
