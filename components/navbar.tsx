@@ -13,7 +13,7 @@ import {
 import ColorModeToggle from './ColorModeToggle';
 import NextLink from 'next/link'
 
-const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Projects'}, {text : 'Releases'}, {text : 'About me'}, ] 
+const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Releases'}, {text : 'About me'}, ] 
 
 const NavLink = ({ target, children }: { target? : string, children: ReactNode }) => (
   <Link as={NextLink}
