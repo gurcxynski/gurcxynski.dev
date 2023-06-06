@@ -39,7 +39,7 @@ import {
   
   export default function Footer() {
     return (
-      <Box textColor={useColorModeValue('text.dark', 'text.light')} bgColor={useColorModeValue('blue.50', '')}>
+      <Box textColor={useColorModeValue('text.dark', 'text.light')} bgColor={useColorModeValue('blue.200', 'blue.700')}>
       <Divider />
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 2 }} spacing={8}>
