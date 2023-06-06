@@ -47,7 +47,7 @@ export default function Navbar() {
               ))}
             </HStack>
           </HStack>
-          <Heading size='lg'> <Link as={NextLink} href="/" _hover={{textDecoration:'none'}}>gurcxynski.dev</Link> </Heading>
+          <Heading size='lg'> <Link as={NextLink} href="/" _hover={{textDecoration:'none'}}></Link> </Heading>
           <ColorModeToggle/>
         </Flex>
       </Box>

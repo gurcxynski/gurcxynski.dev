@@ -28,26 +28,31 @@ export default function Releases({ gamesData } : { gamesData : InferGetServerSid
       <Text fontSize='xl'> 
       Games were created in Monogame (C#) for my Fiverr clients
       </Text>
+      <Grid templateColumns='repeat(3, 33%)' gap={6}>
     { gamesData.map((game : { [index : string] : string }) => {
         return (
-            <Card w = '75%' key={game.id}>
+          <GridItem key={game.id}>
+            <Card w ='sm'>
               <CardBody>
-                <HStack spacing='5'>
-                  <Image src={game.cover_url} alt={game.title} rounded='md'/>
-                  <Stack spacing='3'>
+                <VStack spacing='3'>
+                  <Image src={game.cover_url} alt={game.title} rounded='md' sizes='2xs'/>
                     <Heading size='2xl' textAlign='center'> {game.title} </Heading>
-                    <Text fontSize='xl'>{game.short_text}</Text>
                     <Text fontSize='md'> Released: {format(parseISO(game.published_at), 'd LLL y')} </Text>
-                    <Link as={NextLink} href={game.url} w = '10vw'>
-                      <Button w='100%'>
-                        <Text _hover={{textDecoration:'underline'}}> itch.io page <ChevronRightIcon /> </Text> 
-                      </Button>
-                    </Link>
-                  </Stack>
-                </HStack>
-              </CardBody>
-            </Card>
+                    <Text fontSize='xl'>{game.short_text}</Text>
+                </VStack>
+                </CardBody>
+                <Divider />
+                <CardFooter>
+                  <Link as={NextLink} href={game.url}>
+                    <Button variant='solid' colorScheme='blue'>
+                      itch.io page <ChevronRightIcon />
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </GridItem>
         )})}
+        </Grid>
      </VStack>
 </Layout>
 )}
