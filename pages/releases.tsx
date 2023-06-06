@@ -1,6 +1,6 @@
 import Layout from '@/components/layout';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { Image, Heading, Link, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, HStack, Divider, Box, Stack, Spacer, useColorModeValue } from '@chakra-ui/react'
+import { Image, Heading, Link, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, HStack, Divider, Box, Stack, Spacer, useColorModeValue, Grid, GridItem, Button, ButtonGroup, Card, CardBody, CardFooter } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { parseISO, format } from 'date-fns';
 
@@ -23,19 +23,31 @@ export default function Releases({ gamesData } : { gamesData : InferGetServerSid
   return (
     <Layout>
     <VStack spacing={8}>
-      <Heading> Games from <Link href='https://gurcxynski.itch.io'>my itch.io page</Link> </Heading>
-      <Text> These are simple games I created in Monogame (C#) as Fiverr orders dobra tu bedzie jakis madry tekst kiedys napisze cos o tym pare zdan spierdalaj teraz aaaaa aaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaa aaaaaaaa aaaaaaaa</Text>
+      <Heading> My released games </Heading>
+      <Text fontSize='lg'> These are simple games I created in Monogame (C#) as Fiverr orders dobra tu bedzie jakis madry tekst kiedys napisze cos o tym pare zdan spierdalaj teraz aaaaa aaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaa aaaaaaaa aaaaaaaa</Text>
+      <Grid templateColumns='repeat(3, 33%)' gap={10}>
     { gamesData.map((game : { [index : string] : string}) => {
-        return (<Stack key={game.id}>
-        <Divider/>
-        <Link as={NextLink} href={game.url} _hover={{textDecoration: 'none'}}><Heading> {game.title} </Heading></Link>
-        <Text fontSize='md'> Released: {format(parseISO(game.published_at), 'd LLL yyyy')} </Text>
-        <HStack spacing={4} justify='left'>
-          <Image src={game.cover_url} alt={game.title} rounded='md'/>
-          <Text> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non dolor ut diam hendrerit vehicula. Suspendisse hendrerit euismod tempor. Proin suscipit neque sit amet tristique bibendum. Nunc porta ante eget aliquam luctus. Quisque a augue consectetur, ullamcorper dui non, condimentum eros. Fusce vehicula dignissim erat, eu blandit velit rutrum at. Pellentesque ante tortor, pharetra nec congue ac, pellentesque ut sapien. Etiam vitae nibh posuere, gravida lectus sit amet, sagittis tellus. Donec eu neque ac metus venenatis tristique vulputate non libero. Sed sed laoreet turpis. </Text>
-        </HStack>
-        </Stack>
+        return (
+        <GridItem key={game.id}>
+            <Card maxW='sm'>
+              <CardBody>
+              <Image src={game.cover_url} alt={game.title} rounded='md'/>
+                <Stack mt='6' spacing='3'>
+                <Heading size='2xl' textAlign='center'> {game.title} </Heading>
+                <Text fontSize='lg'>{game.short_text}</Text>
+                <Text fontSize='md'> Released: {format(parseISO(game.published_at), 'd LLL yyyy')} </Text>
+                </Stack>
+              </CardBody>
+              <Divider />
+              <CardFooter>
+                  <Button colorScheme='blue'>
+                  <Link as={NextLink} href={game.url} _hover={{textDecoration: 'none'}}>{game.title} itch.io page</Link>
+                  </Button>
+              </CardFooter>
+            </Card>
+        </GridItem>
         )})}
+        </Grid>
      </VStack>
 </Layout>
 )}

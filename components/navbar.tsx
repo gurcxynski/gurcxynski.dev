@@ -30,8 +30,8 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
 
 export default function Navbar() {
   return (
-      <Box bg={useColorModeValue('blue.200', 'blue.700')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box bg={useColorModeValue('blue.200', 'blue.700')} px={4} position='sticky' top='0' w = '100%' zIndex={1000}>
+        <Flex h='10%' alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box width='6vw'>
               <Link as={NextLink} href="/">

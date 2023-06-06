@@ -18,7 +18,7 @@ export default function Layout({ children} : { children : React.ReactNode }) {
         </Head>
         <Navbar/>
         <main>
-            <Box className={styles.container} >
+            <Box className={styles.container} marginTop='2%'>
             {children}
             </Box>
         </main>
