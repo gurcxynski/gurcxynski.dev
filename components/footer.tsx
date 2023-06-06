@@ -13,6 +13,7 @@ import {
     Heading,
     useColorMode,
     HStack,
+    Divider,
   } from '@chakra-ui/react';
   import { ReactNode } from 'react';
   
@@ -38,9 +39,8 @@ import {
   
   export default function Footer() {
     return (
-      <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+      <Box textColor={useColorModeValue('text.dark', 'text.light')} bgColor={useColorModeValue('blue.50', '')}>
+      <Divider />
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 2 }} spacing={8}>
             <Stack align={'flex-start'}>

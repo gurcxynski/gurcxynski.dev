@@ -12,7 +12,7 @@ import {
 import ColorModeToggle from './ColorModeToggle';
 import NextLink from 'next/link'
 
-const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Releases'}, {text : 'About me'}, ] 
+const Links : { text : string, link? : string}[] = [{text : 'Home', link:'/'}, {text : 'Releases'}, {text : 'Projects'}, {text : 'About me'}, ] 
 
 const NavLink = ({ target, children }: { target? : string, children: ReactNode }) => (
   <Link as={NextLink}
@@ -21,7 +21,7 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('theme.light', 'theme.dark'),
+      bg: useColorModeValue('blue.100', 'blue.500'),
     }}
     href={`${target ? target : "/" + children?.toString().toLowerCase().replace(" ", "-")}`}>
     {children}
@@ -30,7 +30,7 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
 
 export default function Navbar() {
   return (
-      <Box bg={useColorModeValue('blue.100', 'blue.700')} px={4}>
+      <Box bg={useColorModeValue('blue.200', 'blue.700')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box width='6vw'>

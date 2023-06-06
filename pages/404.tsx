@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import NextLink from 'next/link'
-import { Box, Heading, Text, Button, Link } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Link, useColorModeValue } from '@chakra-ui/react';
 
 function NotFound() {
   return (
@@ -20,7 +20,8 @@ function NotFound() {
       </Text>
       <Link as={NextLink} href="/">
       <Button
-        color="white"
+        color={useColorModeValue('blue.700', 'white')}
+        backgroundColor={useColorModeValue('blue.100', 'blue.700')}
         variant="solid">
         Go to Home
       </Button>

@@ -10,7 +10,9 @@ const colors = {
         700 : '#002F51',
         500 : '#004160',
         300 : '#80A0B0',
+        200 : '#cde2ee ',
         100 : '#AECAD8',
+        50 : '#e9f3f8'
       },
       text : {
         light : '#ffffff',
