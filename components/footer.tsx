@@ -42,7 +42,7 @@ import {
         bg={useColorModeValue('gray.50', 'gray.900')}
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 2 }} spacing={8}>
             <Stack align={'flex-start'}>
               <ListHeader>My projects</ListHeader>
               <Link as={NextLink} href={'https://github.com/gurcxynski?tab=repositories'}><Text as='b'>Github</Text> repositories</Link>
@@ -50,10 +50,6 @@ import {
                 <Link as={NextLink} href={'https://www.fiverr.com/gurcxynski'}><Text as='b'>Fiverr</Text> page</Link>
               </Stack>
               <Link as={NextLink} href={'https://gurcxynski.itch.io'}>Releases on <Text as='b'>itch.io</Text></Link>
-            </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Me</ListHeader>
-              <Link as={NextLink} href={'/about-me'}>About Me</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Follow Me</ListHeader>

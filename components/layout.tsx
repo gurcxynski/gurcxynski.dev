@@ -1,17 +1,24 @@
 import Head from "next/head";
 import styles from './layout.module.css'
 import Navbar from "./navbar";
-import { Box } from "@chakra-ui/react";
+import { 
+  Box,
+  useColorModeValue, 
+} from "@chakra-ui/react";
 import Footer from "./footer";
 
-export default function Layout({ children, home } : {children : React.ReactNode, home? : React.ReactNode}) {
+export default function Layout({ children} : { children : React.ReactNode }) {
     return (
-      <Box>
+      <Box textColor={useColorModeValue('text.dark', 'text.light')}>
         <Head>
+        <title>gurcxynski.dev</title>
+        <meta name="description" content="Website-portfolio for showcase" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/g.dev.icon.ico" />
         </Head>
-        <Navbar />
+        <Navbar/>
         <main>
-            <Box className={styles.container}>
+            <Box className={styles.container} >
             {children}
             </Box>
         </main>

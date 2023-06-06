@@ -8,7 +8,6 @@ import {
   useColorModeValue,
   Image,
   Heading,
-  Spacer,
 } from '@chakra-ui/react';
 import ColorModeToggle from './ColorModeToggle';
 import NextLink from 'next/link'
@@ -22,7 +21,7 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('theme.light', 'theme.dark'),
     }}
     href={`${target ? target : "/" + children?.toString().toLowerCase().replace(" ", "-")}`}>
     {children}
@@ -30,14 +29,13 @@ const NavLink = ({ target, children }: { target? : string, children: ReactNode }
 );
 
 export default function Navbar() {
-  const { colorMode } = useColorMode();
   return (
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('blue.100', 'blue.700')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box width='6vw'>
               <Link as={NextLink} href="/">
-              <Image src={`/images/gurcxynskidev-low-resolution-logo-${colorMode === 'light' ? 'black' : 'white'}-on-transparent-background.png`} alt="logo" />
+              <Image src={`/images/gurcxynskidev-low-resolution-logo-${useColorModeValue('black', 'white')}-on-transparent-background.png`} alt="logo" />
               </Link>
             </Box>
             <HStack
