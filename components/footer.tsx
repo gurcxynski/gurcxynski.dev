@@ -44,7 +44,7 @@ import {
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 2 }} spacing={8}>
             <Stack align={'flex-start'}>
-              <ListHeader>My projects</ListHeader>
+              <ListHeader>Projects</ListHeader>
               <Link as={NextLink} href={'https://github.com/gurcxynski?tab=repositories'}><Text as='b'>Github</Text> repositories</Link>
               <Stack direction={'row'} align={'center'} spacing={2}>
                 <Link as={NextLink} href={'https://www.fiverr.com/gurcxynski'}><Text as='b'>Fiverr</Text> page</Link>
@@ -52,7 +52,7 @@ import {
               <Link as={NextLink} href={'https://gurcxynski.itch.io'}>Releases on <Text as='b'>itch.io</Text></Link>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Follow Me</ListHeader>
+              <ListHeader>Follow me</ListHeader>
               <Link as={NextLink} href={'https://www.facebook.com/gurcxynski/'}>Facebook</Link>
               <Link as={NextLink} href={'https://github.com/gurcxynski'}>Github</Link>
               <Link as={NextLink} href={'https://www.linkedin.com/in/wojciech-górczyński-979442232/'}>LinkedIn</Link>
