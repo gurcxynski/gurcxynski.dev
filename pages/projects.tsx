@@ -74,15 +74,7 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
                                     {repo.language}
                                   </Text>
                                 </Box>
-                                <Box>
-                                  <Heading size='xs' textTransform='uppercase'>
-                                    Details
-                                  </Heading>
-                                  <Text pt='2' fontSize='sm'>
-                                    {readmes[repo.name]}
-                                  </Text>
-                                </Box>
-                                <Button> <Link as={NextLink} href={repo.html_url}> Github page </Link></Button>
+                                <Link as={NextLink} href={repo.html_url}> <Button w = {'100%'}> Github page </Button> </Link>
                               </Stack>
                             </CardBody>
                         </Card>
