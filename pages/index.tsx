@@ -53,7 +53,7 @@ function Present({ data } : { data : InferGetServerSidePropsType<GetServerSidePr
 export default function Home({ gamesData } : { gamesData : InferGetServerSidePropsType<GetServerSideProps>}) {
   return (
         <Layout>
-          <Stack spacing={5}>
+          <Stack spacing={9}>
             <Flex>
               <Spacer/>
               <Image borderRadius='full'

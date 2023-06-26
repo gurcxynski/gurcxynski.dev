@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { Box, Button, Card, CardBody, CardHeader, Divider, Grid, GridItem, HStack, Heading, Link, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, Divider, Grid, GridItem, HStack, Heading, Link, SimpleGrid, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import format from "date-fns/format";
 import { parseISO } from "date-fns";
@@ -40,7 +40,7 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
     }
     return(
         <Layout>
-            <Grid templateColumns='repeat(3, 33%)' gap={6}>
+            <SimpleGrid minChildWidth='210px' spacingX='1vw' spacingY='2vw'>
             {reposData.map((repo : {[index : string] : any}) => {
                 return (
                     <GridItem key={repo.id}>
@@ -75,7 +75,7 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
                     </GridItem>
                 )
             })}
-            </Grid>
+            </SimpleGrid>
         </Layout>
     )
 }

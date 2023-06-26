@@ -1,6 +1,6 @@
 import Layout from '@/components/layout';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { Image, Heading, Link, Text, VStack, Divider, Grid, GridItem, Button, Card, CardBody, CardFooter, SimpleGrid } from '@chakra-ui/react'
+import { Image, Heading, Link, Text, VStack, Divider, Grid, GridItem, Button, Card, CardBody, CardFooter, SimpleGrid, Stack } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { parseISO, format } from 'date-fns';
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -23,12 +23,12 @@ export const getServerSideProps : GetServerSideProps = async () => {
 export default function Releases({ gamesData } : { gamesData : InferGetServerSidePropsType<GetServerSideProps>}) {
   return (
     <Layout>
-    <VStack spacing={8}>
+    <Stack spacing={8}>
       <Heading size='2xl'> Released games </Heading>
       <Text fontSize='xl'> 
-      Games were created in Monogame (C#) for my Fiverr clients
+      These are the games I&apos;ve created for my Fiverr clients using Monogame library for C#:
       </Text>
-      <SimpleGrid minChildWidth='300px' spacingX='1vw' spacingY='2vw'>
+      <SimpleGrid minChildWidth='310px' spacingX='2vw' spacingY='2vw'>
     { gamesData.map((game : { [index : string] : string }) => {
         return (
             <Card key={game.id}>
@@ -51,6 +51,6 @@ export default function Releases({ gamesData } : { gamesData : InferGetServerSid
               </Card>
         )})}
         </SimpleGrid>
-     </VStack>
+     </Stack>
 </Layout>
 )}
