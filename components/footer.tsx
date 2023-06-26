@@ -17,11 +17,10 @@ import {
   } from '@chakra-ui/react';
   import { ReactNode } from 'react';
   
-  const Logo = (props: any) => {
+  const Logo = () => {
     const { colorMode } = useColorMode();
     return (
       <HStack>
-          <Heading as='h5' size='sm'>Wojciech Górczyński</Heading>
           <Box width='6vw'>
           <Image src={`/images/gurcxynskidev-low-resolution-logo-${colorMode === 'light' ? 'black' : 'white'}-on-transparent-background.png`} alt='bottom-logo'/>
           </Box>
@@ -79,7 +78,7 @@ import {
             <Logo />
           </Flex>
           <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-            © 2023 Wojciech Górczyński. All rights reserved
+            © 2023 Wojciech Górczyński
           </Text>
         </Box>
       </Box>

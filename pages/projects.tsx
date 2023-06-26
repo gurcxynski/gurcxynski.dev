@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { Box, Button, Card, CardBody, CardHeader, Grid, GridItem, Heading, Link, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, Divider, Grid, GridItem, HStack, Heading, Link, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import format from "date-fns/format";
 import { parseISO } from "date-fns";
@@ -46,11 +46,14 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
                     <GridItem key={repo.id}>
                         <Card h = '100%'>
                             <CardHeader>
-                              <Heading size='md'>{repo.name}</Heading>
+                              <Heading size='xl'>{repo.name}</Heading>
+                              <Text pt='2' fontSize='sm'>
+                                    {format(parseISO(repo.created_at), 'd/LL/y')}
+                                  </Text>
                             </CardHeader>
                             <CardBody>
-                              <Stack divider={<StackDivider />} spacing='4'>
-                                <Box>
+                              <Stack spacing='3' height='100%'>
+                              <Box>
                                   <Heading size='xs' textTransform='uppercase'>
                                     Description
                                   </Heading>
@@ -58,23 +61,14 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
                                     {repo.description}
                                   </Text>
                                 </Box>
-                                <Box>
-                                  <Heading size='xs' textTransform='uppercase'>
-                                    Created
-                                  </Heading>
-                                  <Text pt='2' fontSize='sm'>
-                                    {format(parseISO(repo.created_at), 'd/LL/y')}
-                                  </Text>
-                                </Box>
+                                <Divider />
                                 <Box>
                                   <Heading size='xs' textTransform='uppercase'>
                                     Language
                                   </Heading>
-                                  <Text pt='2' fontSize='sm'>
-                                    {repo.language}
-                                  </Text>
+                                  <Text pt='2' fontSize='sm'> {repo.language} </Text>
                                 </Box>
-                                <Link as={NextLink} href={repo.html_url}> <Button w = {'100%'}> Github page </Button> </Link>
+                                <Link as={NextLink} href={repo.html_url}> <Button w = {'100%'}> Github repository </Button> </Link>
                               </Stack>
                             </CardBody>
                         </Card>
