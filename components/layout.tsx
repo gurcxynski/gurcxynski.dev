@@ -9,7 +9,7 @@ import Footer from "./footer";
 
 export default function Layout({ children} : { children : React.ReactNode }) {
     return (
-      <Box textColor={useColorModeValue('text.dark', 'text.light')} bgColor={useColorModeValue('blue.50', 'blue.900')}>
+      <Box textColor={useColorModeValue('text.dark', 'text.light')} bgColor={useColorModeValue('blue.50', 'blue.800')}>
         <Head>
         <title>gurcxynski.dev</title>
         <meta name="description" content="Website-portfolio for showcase" />
