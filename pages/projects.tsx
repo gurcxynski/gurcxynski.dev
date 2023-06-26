@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import format from "date-fns/format";
 import { parseISO } from "date-fns";
 
-export const getStaticProps : GetStaticProps = async () => {
+export const getServerSideProps : GetStaticProps = async () => {
     try {
     const res = await fetch(`https://api.github.com/users/gurcxynski/repos`);
     const result = await res.json() as any[] 
@@ -33,14 +33,14 @@ export default function Projects( { reposData, readmes } : InferGetStaticPropsTy
         return(
             <Layout>
                 <VStack>
-                    <Text> Github API connection limit reached, try again later </Text>
+                    <Text> Failed to fetch data from Github </Text>
                 </VStack>
             </Layout>
         )
     }
     return(
         <Layout>
-            <SimpleGrid minChildWidth='210px' spacingX='1vw' spacingY='2vw'>
+            <SimpleGrid minChildWidth='300px' spacingX='2vw' spacingY='2vw'>
             {reposData.map((repo : {[index : string] : any}) => {
                 return (
                     <GridItem key={repo.id}>
